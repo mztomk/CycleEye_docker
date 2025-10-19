@@ -1,7 +1,8 @@
+--extra-index-url https://download.pytorch.org/whl/cu118
 ultralytics==8.0.196
 opencv-python-headless==4.8.1.78
-torch==2.1.0
-torchvision==0.16.0
+torch==2.1.0+cu118
+torchvision==0.16.0+cu118
 numpy==1.24.3
 pandas==2.0.3
 matplotlib==3.7.2

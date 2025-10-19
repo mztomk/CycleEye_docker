@@ -22,6 +22,10 @@ services:
           memory: 4G
         reservations:
           memory: 2G
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
     
     # 自動再起動を無効化（バッチ処理のため）
     restart: "no"
