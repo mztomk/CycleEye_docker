@@ -1,0 +1,27 @@
+
+services:
+  cycleeye:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    
+    container_name: cycleeye-app
+    
+    # ボリュームマウント: ローカルのdataフォルダをコンテナ内にマウント
+    volumes:
+      - ./data:/app/data
+    
+    # 環境変数（必要に応じて追加）
+    environment:
+      - PYTHONUNBUFFERED=1
+    
+    # メモリ制限（オプション：大きな動画を処理する場合は増やす）
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+        reservations:
+          memory: 2G
+    
+    # 自動再起動を無効化（バッチ処理のため）
+    restart: "no"
