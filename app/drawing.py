@@ -27,7 +27,12 @@ def draw_detections(frame, results):
 
                 cv2.rectangle(frame, (x1, y1), (x2, y2), box_color, 2)
                 text = f"{label} {conf:.2f}"
-                cv2.putText(frame, text, (x1, y1 - 9), cv2.FONT_HERSHEY_SIMPLEX, 0.5, box_color, thickness)
+                if label == "Worker":
+                    cv2.putText(frame, text, (x1, y2 + 15), cv2.FONT_HERSHEY_SIMPLEX, 0.5, box_color, thickness)
+                else:
+                    cv2.putText(frame, text, (x1, y1 - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, box_color, thickness)
+
+
 
 
 def draw_static_zones(frame, static_zones: Dict[str, List[int]]):
