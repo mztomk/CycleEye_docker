@@ -57,6 +57,7 @@
 ## 📊 システム機能
 
 ### 検出対象
+YOLOv8による自動検出
 - Worker（作業者）
 - Pallet（パレット）
 - Assembling（組立中の状態）

@@ -42,6 +42,19 @@ def init_database(db_path: str):
     print("✅ Database initialized")
 
 
+def clear_database(db_path: str):
+    """データベースの全データを削除（テーブル構造は維持）"""
+    conn = sqlite3.connect(db_path)
+    cursor = conn.cursor()
+    
+    cursor.execute("DELETE FROM cycle_measurements")
+    cursor.execute("DELETE FROM zone_targets")
+    
+    conn.commit()
+    conn.close()
+    print("✅ Database cleared (all data deleted)")
+
+
 def set_zone_targets(db_path: str, target_seconds: float = 5.0):
     """各ゾーンの目標時間を設定"""
     conn = sqlite3.connect(db_path)

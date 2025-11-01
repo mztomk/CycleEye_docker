@@ -13,7 +13,7 @@ from constants import (
     MODEL_PATH, VIDEO_PATH, DB_PATH, OUTPUT_DIR, 
     OUTPUT_VIDEO_PATH, FPS
 )
-from database import init_database, set_zone_targets
+from database import init_database, clear_database, set_zone_targets
 from detection import detect_objects, count_workers, detect_zone_objects
 from measurement import initialize_zone_states, update_zone_state, mark_invalid_cycles
 from drawing import annotate_frame
@@ -24,6 +24,7 @@ from report import generate_all_reports
 def setup_environment():
     """環境セットアップを実行"""
     init_database(DB_PATH)
+    clear_database(DB_PATH)
     set_zone_targets(DB_PATH, target_seconds=5.0)
     os.makedirs(OUTPUT_DIR, exist_ok=True)
     print(f"📁 Output directory: {OUTPUT_DIR}\n")

@@ -44,7 +44,7 @@ TARGET_ZONES = ["A_Assemble", "A2_Assemble", "B_Assemble", "B2_Assemble"]
 # 信頼度しきい値
 # ======================
 CONFIDENCE_THRESHOLDS = {
-    0: 0.40,  # Worker
+    0: 0.30,  # Worker
     1: 0.30,  # Pallet
     2: 0.10,  # Assembling
 }
